@@ -64,7 +64,7 @@ export default {
                 {
                     id:'0008',
                     imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-                    desc:'热门旅游热门旅游热门旅游热门旅游'
+                    desc:'热门旅游'
                 },
                 {
                     id:'0009',
