@@ -1,6 +1,6 @@
 <template>
     <div class="icon-wrapper">
-        <swiper>
+        <swiper :options="swiperOption">
             <swiper-slide v-for="(page,index) of pages" :key="index">
                 <div class="icon"
                      v-for="item in page"
@@ -23,55 +23,14 @@
 <script>
 export default {
     name:'HomeIcons',
+    props:{
+        iconList:Array
+    },
     data() {
         return {
-            iconList:[
-                {
-                    id:'0001',
-                    imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-                    desc:'热门景点'
-                },
-                {
-                    id:'0002',
-                    imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-                    desc:'热门旅游'
-                },
-                {
-                    id:'0003',
-                    imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-                    desc:'热门旅游'
-                },
-                {
-                    id:'0004',
-                    imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-                    desc:'热门旅游'
-                },
-                {
-                    id:'0005',
-                    imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-                    desc:'热门旅游'
-                },
-                {
-                    id:'0006',
-                    imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-                    desc:'热门旅游'
-                },
-                {
-                    id:'0007',
-                    imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-                    desc:'热门旅游'
-                },
-                {
-                    id:'0008',
-                    imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-                    desc:'热门旅游'
-                },
-                {
-                    id:'0009',
-                    imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-                    desc:'热门旅游'
-                },
-            ]
+            swiperOption: {
+                autoplay: false,
+             }
         }
     },
     computed: {
@@ -97,7 +56,6 @@ export default {
     .icon-wrapper
         overflow hidden
         height 0
- 
         padding-bottom 50%
         .icon
             position relative
@@ -110,10 +68,12 @@ export default {
                 left 0
                 right 0
                 bottom .44rem
+                box-sizing border-box
+                padding .1rem
                 .icon-img-content
                     height 100%
                     display block
-                    margin 0 auto
+                    margin  auto
             .icon-desc
                 position absolute
                 left 0
